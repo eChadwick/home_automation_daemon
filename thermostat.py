@@ -20,18 +20,34 @@ class Thermostat:
 
         return current_temp, min_temp, max_temp
 
-    # def setModeCool(self):
-    #     return requests.post(
-    #         f'{self.api_base_path}/commands',
-    #         headers=self.auth_header,
-    #         data={
-    #             'commands': [
-    #                 {
-    #                     'component': 'main',
-    #                     'capability': 'thermostatMode',
-    #                     'command': 'cool'
-    #                 }
-    #             ]
-    #         },
-    #         timeout=10
-    #     )
+    def setModeCool(self):
+        requests.post(
+            f'{self.api_base_path}/commands',
+            headers=self.auth_header,
+            json={
+                'commands': [
+                    {
+                        'component': 'main',
+                        'capability': 'thermostatMode',
+                        'command': 'cool',
+                    }
+                ]
+            },
+            timeout=10
+        )
+
+    def setModeHeat(self):
+        requests.post(
+            f'{self.api_base_path}/commands',
+            headers=self.auth_header,
+            json={
+                'commands': [
+                    {
+                        'component': 'main',
+                        'capability': 'thermostatMode',
+                        'command': 'heat',
+                    }
+                ]
+            },
+            timeout=10
+        )

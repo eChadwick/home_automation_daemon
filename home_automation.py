@@ -8,9 +8,16 @@ thermostat_id = '61e0282f-f6ee-4503-8784-e90c255514c0'
 
 
 def main():
-    thermostat = Thermostat(token,thermostat_id)
-    current_temp, min_temp, max_temp = thermostat.getTempStatuses()
-    x=5
+    thermostat = Thermostat(token, thermostat_id)
+    while True:
+        current_temp, min_temp, max_temp = thermostat.getTempStatuses()
+        if min_temp > max_temp:
+            pass
+        elif current_temp < min_temp:
+            thermostat.setModeHeat()
+        elif current_temp > max_temp:
+            thermostat.setModeCool()
+
 
 if __name__ == '__main__':
     main()
