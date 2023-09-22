@@ -1,4 +1,4 @@
-from app.thermostat import Thermostat
+from thermostat import Thermostat
 
 token = '27bf5015-2ece-4d04-aa5d-1203e769a24b'
 api_base_path = 'https://api.smartthings.com/v1'
