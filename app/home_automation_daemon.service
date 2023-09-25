@@ -3,6 +3,7 @@ Description=home_automation
 After=network.target
 
 [Service]
+User=home_automation_daemon
 WorkingDirectory=/home/pi/home_automation_daemon
 ExecStart=/home/pi/home_automation_daemon/.venv/bin/python /home/pi/home_automation_daemon/home_automation_daemon.py
 Restart=always
