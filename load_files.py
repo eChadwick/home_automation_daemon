@@ -3,9 +3,10 @@ from scp import SCPClient
 from paramiko import SSHClient
 app_files = [
     'app/requirements.txt',
+    'app/config.py',
     'app/home_automation_daemon.py',
     'app/thermostat.py',
-    'app/config.py'
+    'app/switch.py'
 ]
 systemd_service_file = 'app/home_automation_daemon.service'
 
