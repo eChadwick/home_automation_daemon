@@ -2,9 +2,10 @@ from time import sleep
 from scp import SCPClient
 from paramiko import SSHClient
 app_files = [
+    'app/requirements.txt',
     'app/home_automation_daemon.py',
     'app/thermostat.py',
-    'app/requirements.txt'
+    'app/config.py'
 ]
 systemd_service_file = 'app/home_automation_daemon.service'
 
