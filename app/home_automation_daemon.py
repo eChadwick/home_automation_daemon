@@ -1,4 +1,5 @@
 from thermostat import Thermostat
+from time import sleep
 
 token = '27bf5015-2ece-4d04-aa5d-1203e769a24b'
 api_base_path = 'https://api.smartthings.com/v1'
@@ -13,10 +14,12 @@ def main():
         current_temp, min_temp, max_temp = thermostat.getTempStatuses()
         if min_temp > max_temp:
             pass
-        elif current_temp < min_temp:
+        elif current_temp < min_temp - 1:
             thermostat.setModeHeat()
-        elif current_temp > max_temp:
+        elif current_temp > max_temp + 1:
             thermostat.setModeCool()
+
+        sleep(30)
 
 
 if __name__ == '__main__':
