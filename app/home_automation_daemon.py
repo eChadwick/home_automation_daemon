@@ -4,7 +4,12 @@ import config
 
 
 def main():
-    thermostat = Thermostat(config.api_token, config.home_thermostat_id)
+    thermostat = Thermostat(
+        config.api_base_path,
+        config.api_token,
+        config.home_thermostat_id
+    )
+
     while True:
         current_temp, min_temp, max_temp = thermostat.getTempStatuses()
         if min_temp > max_temp:

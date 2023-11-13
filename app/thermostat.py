@@ -3,9 +3,9 @@ import json
 
 
 class Thermostat:
-    def __init__(self, auth_token, device_id):
+    def __init__(self, api_base_path, auth_token, device_id):
         self.auth_header = {'Authorization': f'Bearer {auth_token}'}
-        self.api_base_path = f'https://api.smartthings.com/v1/devices/{device_id}'
+        self.api_base_path = f'{api_base_path}/{device_id}'
 
     def getTempStatuses(self):
         response = requests.get(
